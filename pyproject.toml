@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ipg"
+version = "0.1.0"
+description = "JAX kernel of interacting particle guidance (IPG) for reward-tilted generative priors (arXiv:2609.37227)."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Teddy Tennant", email = "teddytennant@icloud.com" }]
+dependencies = [
+    "jax>=0.4.20",
+    "numpy",
+]
+
+[project.optional-dependencies]
+tests = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
